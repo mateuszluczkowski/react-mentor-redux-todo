@@ -8,9 +8,12 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.typography.fontFamily};
     font-size:18px;
 }
-.root{
-    min-height: 100vh;
-   
+.root {
+    background: ${({ theme, isDark }) =>
+       isDark
+          ? theme.colors.darkTheme.veryDarkBlue
+          : theme.colors.lightTheme.veryLightGray}
 }
+
 `;
 export default GlobalStyle;

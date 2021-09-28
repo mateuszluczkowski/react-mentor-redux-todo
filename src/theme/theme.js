@@ -1,12 +1,17 @@
+import desktopDark from "../assets/images/bg-desktop-dark.jpg";
+import desktopLight from "../assets/images/bg-desktop-light.jpg";
+import mobileDark from "../assets/images/bg-mobile-dark.jpg";
+import mobileLight from "../assets/images/bg-mobile-light.jpg";
+
 const theme = {
    layout: { mobile: "375px", desktop: "1440px" },
    colors: {
       primary: {
          brightBlue: "hsl(220,98%,61%)",
-         checkbackground: {
+         checkBackground: {
             backgroundColor: "rgb(87,221,255)",
             background:
-               "linear-gradient(135deg, rgba(87,221,255,1) 0%, rgba(192,88,243,1) 100%)",
+               " linear-gradient(135deg, rgba(87,221,255,1) 0%, rgba(192,88,243,1) 100%)",
          },
       },
       lightTheme: {
@@ -29,6 +34,10 @@ const theme = {
    typography: {
       fontSize: "18px",
       fontFamily: "'Josefin Sans', sans-serif;",
+   },
+   background: {
+      light: { mobile: mobileLight, desktop: desktopLight },
+      dark: { mobile: mobileDark, desktop: desktopDark },
    },
 };
 export default theme;
