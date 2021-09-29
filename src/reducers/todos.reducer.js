@@ -4,6 +4,7 @@ export const todoSlice = createSlice({
    initialState: {
       todos: [],
       id: 0,
+      filter: "all",
    },
    reducers: {
       add: (state, action) => {
@@ -31,8 +32,11 @@ export const todoSlice = createSlice({
          const isChecked = state.todos[index].isChecked;
          state.todos[index].isChecked = !isChecked;
       },
+      setFilter: (state, action) => {
+         state.filter = action.payload.filter;
+      },
    },
 });
 
-export const { add, remove, edit, check } = todoSlice.actions;
+export const { add, check, edit, remove, setFilter } = todoSlice.actions;
 export default todoSlice.reducer;

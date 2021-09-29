@@ -5,3 +5,4 @@ export { default as Header } from "./Header";
 export { default as CheckCircle } from "./CheckCircle";
 export { default as List } from "./List";
 export { default as Task } from "./Task";
+export { default as Panel } from "./Panel";

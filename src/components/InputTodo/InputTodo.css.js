@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Form = styled.form`
    display: flex;
+   padding: 0 20px;
    justify-content: center;
    align-items: center;
    background: white;

@@ -4,9 +4,12 @@ import { check } from "reducers/todos.reducer";
 const CheckCircle = ({ id, isChecked }) => {
    const dispatch = useDispatch();
    const handleClick = () => dispatch(check({ id }));
-   console.log(id);
    return (
-      <Circle onClick={handleClick} isChecked={isChecked}>
+      <Circle
+         onClick={id >= 0 ? handleClick : null}
+         isChecked={isChecked}
+         id={id}
+      >
          {isChecked ? <CheckIcon /> : null}
       </Circle>
    );
