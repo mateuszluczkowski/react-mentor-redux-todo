@@ -19,6 +19,10 @@ export const Title = styled.h1`
    font-size: 40px;
    flex-grow: 1;
    letter-spacing: 15px;
+   @media (max-width: ${({ theme }) => theme.layout.mobile}px) {
+      font-size: 30px;
+      letter-spacing: 10px;
+   }
 `;
 export const ThemeIcon = styled.img.attrs(({ isDark }) => ({
    src: isDark ? iconSun : iconMoon,

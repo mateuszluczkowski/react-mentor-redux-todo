@@ -9,6 +9,7 @@ const InputTodo = () => {
    const handleSubmit = (e) => {
       e.preventDefault();
       const text = e.target[0].value;
+      if (text === "") return;
       e.target[0].value = "";
       dispatch(add({ text: text }));
    };

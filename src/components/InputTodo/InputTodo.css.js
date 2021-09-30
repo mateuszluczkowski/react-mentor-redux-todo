@@ -21,4 +21,7 @@ export const Input = styled.input.attrs(() => ({
    &:focus {
       outline: none;
    }
+   @media (max-width: ${({ theme }) => theme.layout.mobile}px) {
+      padding: 18px 0;
+   }
 `;

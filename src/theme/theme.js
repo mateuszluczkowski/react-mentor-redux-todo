@@ -4,7 +4,11 @@ import mobileDark from "../assets/images/bg-mobile-dark.jpg";
 import mobileLight from "../assets/images/bg-mobile-light.jpg";
 
 const theme = {
-   layout: { mobile: "375px", desktop: "1440px" },
+   layout: {
+      //pixels
+      mobile: 768,
+      desktop: 1440,
+   },
    colors: {
       primary: {
          brightBlue: "hsl(220,98%,61%)",
@@ -33,10 +37,10 @@ const theme = {
    },
    typography: {
       color: {
-         lightTheme: "black",
+         lightTheme: "hsl(235, 19%, 35%)",
          darkTheme: "hsl(234, 39%, 85%)",
       },
-      fontSize: "18px",
+      fontSize: { desktop: "18px", mobile: "15px" },
       fontFamily: "'Josefin Sans', sans-serif;",
    },
    background: {

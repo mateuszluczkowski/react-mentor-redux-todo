@@ -8,8 +8,8 @@ export const Circle = styled.div`
    text-align: center;
    line-height: 25px;
    margin-right: 20px;
-   width: 25px;
-   height: 25px;
+   min-width: 25px;
+   min-height: 25px;
    border-radius: 50%;
    cursor: pointer;
    transition: 0.4s;
@@ -25,6 +25,11 @@ export const Circle = styled.div`
          : null}
 
    ${({ id }) => (id === undefined ? " cursor:unset;" : null)}
+   user-select: none;
+   @media (max-width: ${({ theme }) => theme.layout.mobile}px) {
+      width: 20px;
+      height: 20px;
+   }
 `;
 export const CheckIcon = styled.img.attrs(() => ({
    src: iconCheck,

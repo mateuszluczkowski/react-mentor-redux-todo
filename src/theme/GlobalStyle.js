@@ -6,7 +6,11 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
     box-sizing: border-box;
     font-family: ${({ theme }) => theme.typography.fontFamily};
-    font-size:${({ theme }) => theme.typography.fontSize};
+    
+    font-size:${({ theme, isMobile }) =>
+       isMobile
+          ? theme.typography.fontSize.mobile
+          : theme.typography.fontSize.desktop};
     color: ${({ theme, isDark }) =>
        isDark
           ? theme.typography.color.darkTheme
@@ -14,7 +18,8 @@ const GlobalStyle = createGlobalStyle`
    
 }
 .root {
-
+   max-width: 100vw;
+   overflow:hidden;
     background: ${({ theme, isDark }) =>
        isDark
           ? theme.colors.darkTheme.veryDarkBlue

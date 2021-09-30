@@ -4,10 +4,12 @@ import { iconCross } from "assets/images";
 
 export const Wrapper = styled.div`
    display: flex;
-   padding: 18px 20px;
+   padding: 16px 20px;
    align-items: center;
    justify-content: flex-end;
    flex-basis: 100%;
+   max-width: 550px;
+   overflow: hidden;
    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
    cursor: pointer;
 `;

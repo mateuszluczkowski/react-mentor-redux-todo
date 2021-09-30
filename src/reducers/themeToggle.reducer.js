@@ -3,7 +3,7 @@ export const themeToggleSlice = createSlice({
    name: "theme",
    initialState: {
       isDark: false,
-      isMobile: false,
+      isMobile: true,
    },
    reducers: {
       toggle: (state, action) => {
