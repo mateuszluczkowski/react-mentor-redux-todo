@@ -3,7 +3,7 @@ import { iconCheck } from "assets/images";
 
 export const Circle = styled.div`
    z-index: 1;
-   background: white;
+   background: transparent;
    position: relative;
    text-align: center;
    line-height: 25px;
@@ -11,9 +11,12 @@ export const Circle = styled.div`
    width: 25px;
    height: 25px;
    border-radius: 50%;
-   border: 1px solid rgba(0, 0, 0, 0.1);
    cursor: pointer;
    transition: 0.4s;
+   border: ${({ theme, isDark }) =>
+      isDark
+         ? "1px solid rgba(255, 255, 255, 0.1)"
+         : "1px solid rgba(0, 0, 0, 0.1)"};
 
    ${({ isChecked, theme }) =>
       isChecked

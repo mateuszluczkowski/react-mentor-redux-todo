@@ -9,15 +9,17 @@ export const Wrapper = styled.div`
    justify-content: flex-end;
    flex-basis: 100%;
    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-   ${({ isChecked }) =>
-      isChecked
-         ? `text-decoration: line-through; color: rgba(0, 0, 0, 0.2);`
-         : null}
-   cursor:pointer;
+   cursor: pointer;
 `;
 export const Text = styled.p`
    display: block;
    flex-grow: 1;
+   ${({ isChecked, isDark }) => {
+      if (isChecked) {
+         if (isDark) return "text-decoration: line-through; opacity:0.2";
+         else return "text-decoration: line-through;opacity:0.2";
+      }
+   }};
 `;
 export const CrossIcon = styled.img.attrs(() => ({
    src: iconCross,

@@ -32,6 +32,10 @@ const theme = {
       },
    },
    typography: {
+      color: {
+         lightTheme: "black",
+         darkTheme: "hsl(234, 39%, 85%)",
+      },
       fontSize: "18px",
       fontFamily: "'Josefin Sans', sans-serif;",
    },

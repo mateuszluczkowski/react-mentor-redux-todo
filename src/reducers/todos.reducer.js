@@ -25,7 +25,6 @@ export const todoSlice = createSlice({
          state.todos[index] = action.payload;
       },
       check: (state, action) => {
-         // console.log(action);
          const index = state.todos.findIndex(
             (todo) => todo.id === action.payload.id
          );

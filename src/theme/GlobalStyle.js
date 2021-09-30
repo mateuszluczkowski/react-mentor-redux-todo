@@ -6,13 +6,19 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
     box-sizing: border-box;
     font-family: ${({ theme }) => theme.typography.fontFamily};
-    font-size:18px;
+    font-size:${({ theme }) => theme.typography.fontSize};
+    color: ${({ theme, isDark }) =>
+       isDark
+          ? theme.typography.color.darkTheme
+          : theme.typography.color.lightTheme}
+   
 }
 .root {
+
     background: ${({ theme, isDark }) =>
        isDark
           ? theme.colors.darkTheme.veryDarkBlue
-          : theme.colors.lightTheme.veryLightGray}
+          : theme.colors.lightTheme.veryLightGray};
 }
 
 `;

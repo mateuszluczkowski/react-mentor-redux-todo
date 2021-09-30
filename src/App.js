@@ -1,17 +1,24 @@
+import { ThemeProvider } from "styled-components";
+import { useSelector } from "react-redux";
+
+import { GlobalStyle, theme } from "theme";
 import { Header, InputTodo, List, TodoWindow, Wrapper } from "components";
-// import { useSelector } from "react-redux";
+
 const App = () => {
-   //    const todos = useSelector((state) => state.todos.todos);
-   //    console.log(todos);
+   const isMobile = useSelector((state) => state.themeToggle.isMobile);
+   const isDark = useSelector((state) => state.themeToggle.isDark);
    return (
-      <Wrapper>
-         <TodoWindow>
-            {" "}
-            <Header />
-            <InputTodo />
-            <List />
-         </TodoWindow>
-      </Wrapper>
+      <ThemeProvider theme={theme}>
+         <GlobalStyle isMobile={isMobile} isDark={isDark} />
+         <Wrapper>
+            <TodoWindow>
+               {" "}
+               <Header />
+               <InputTodo />
+               <List />
+            </TodoWindow>
+         </Wrapper>
+      </ThemeProvider>
    );
 };
 export default App;

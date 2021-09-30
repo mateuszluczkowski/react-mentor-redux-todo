@@ -4,6 +4,7 @@ import { Panel, Task } from "components";
 
 const List = () => {
    const todos = useSelector((state) => state.todos.todos);
+   const isDark = useSelector((state) => state.themeToggle.isDark);
    const currentFilter = useSelector((state) => state.todos.filter);
 
    const displayContent = () => {
@@ -41,7 +42,7 @@ const List = () => {
       }
    };
    return (
-      <Wrapper>
+      <Wrapper isDark={isDark}>
          {displayContent()}
          {todos.length ? <Panel /> : null}
       </Wrapper>
