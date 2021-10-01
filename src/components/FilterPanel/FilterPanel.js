@@ -4,10 +4,10 @@ import {
    Counter,
    ListItem,
    Wrapper,
-} from "./Panel.css";
+} from "./FilterPanel.css";
 import { useDispatch, useSelector } from "react-redux";
 import { remove, setFilter } from "reducers/todos.reducer";
-const Panel = () => {
+const FilterPanel = () => {
    const dispatch = useDispatch();
    const todos = useSelector((state) => state.todos.todos);
    const currentFilter = useSelector((state) => state.todos.filter);
@@ -43,8 +43,8 @@ const Panel = () => {
                Active
             </ListItem>
             <ListItem
-               active={currentFilter === "done"}
-               onClick={(e) => handleFilterClick(e, "done")}
+               active={currentFilter === "completed"}
+               onClick={(e) => handleFilterClick(e, "completed")}
             >
                Completed
             </ListItem>
@@ -53,4 +53,4 @@ const Panel = () => {
       </Wrapper>
    );
 };
-export default Panel;
+export default FilterPanel;

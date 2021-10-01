@@ -9,27 +9,36 @@ import { check, remove } from "reducers/todos.reducer";
 const Task = ({ text, isChecked, id }) => {
    const [isDisplayed, setIsDisplayed] = useState(false);
    const dispatch = useDispatch();
-   const isDark = useSelector((state) => state.themeToggle.isDark);
+   const isDark = useSelector(({ themeToggle }) => themeToggle.isDark);
 
-   const handleClick = () => dispatch(check({ id }));
    const handleMouseMove = () => setIsDisplayed(true);
    const handleMouseOut = () => setIsDisplayed(false);
-
+   const handleMouseDown = (e) => console.log(e.target.id);
+   const removeTask = () => dispatch(remove({ id }));
    return (
-      <Wrapper
-         isChecked={isChecked}
-         isDark={isDark}
-         onMouseOver={handleMouseMove}
-         onMouseOut={handleMouseOut}
-      >
-         <CheckCircle id={id} isChecked={isChecked} onClick={handleClick} />
+      <Wrapper isChecked={isChecked} isDark={isDark}>
+         <CheckCircle
+            id={id}
+            isChecked={isChecked}
+            onClick={() => dispatch(check({ id }))}
+         />
 
-         <Text onClick={handleClick} isChecked={isChecked} isDark={isDark}>
+         <Text
+            isChecked={isChecked}
+            isDark={isDark}
+            id={id}
+            onClick={() => dispatch(remove({ id }))}
+            onMouseOver={handleMouseMove}
+            onMouseOut={handleMouseOut}
+            onMouseDown={handleMouseDown}
+         >
             {text}
          </Text>
          <CrossIcon
+            onMouseOver={handleMouseMove}
+            onMouseOut={handleMouseOut}
             isDisplayed={isDisplayed}
-            onClick={() => dispatch(remove({ id }))}
+            onClick={removeTask}
          />
       </Wrapper>
    );

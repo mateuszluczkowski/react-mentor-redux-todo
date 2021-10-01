@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { iconCheck } from "assets/images";
 
-export const Circle = styled.div`
+export const Circle = styled.p`
    z-index: 1;
    background: transparent;
    position: relative;

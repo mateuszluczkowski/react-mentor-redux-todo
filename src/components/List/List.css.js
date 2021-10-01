@@ -10,3 +10,10 @@ export const Wrapper = styled.div`
    background: ${({ theme, isDark }) =>
       isDark ? theme.colors.darkTheme.veryDarkDesaturatedBlue : "white"};
 `;
+
+export const Message = styled.div`
+   padding: 16px 20px;
+   flex-basis: 100%;
+   text-align: center;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+`;
