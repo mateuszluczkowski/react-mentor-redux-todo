@@ -6,20 +6,21 @@ import { CheckCircle } from "components";
 
 import { check, remove } from "reducers/todos.reducer";
 
-const Task = ({ text, isChecked, id }) => {
+const Task = ({ content, isChecked, id }) => {
    const [isDisplayed, setIsDisplayed] = useState(false);
    const dispatch = useDispatch();
    const isDark = useSelector(({ themeToggle }) => themeToggle.isDark);
 
-   const displayCross = () => setIsDisplayed(!isDisplayed);
+   const showCross = () => setIsDisplayed(true);
+   const hideCross = () => setIsDisplayed(false);
    const removeTask = () => dispatch(remove({ id }));
 
    return (
       <Wrapper
          isChecked={isChecked}
          isDark={isDark}
-         onMouseOver={displayCross}
-         onMouseOut={displayCross}
+         onMouseOver={showCross}
+         onMouseOut={hideCross}
       >
          <CheckCircle
             id={id}
@@ -28,11 +29,11 @@ const Task = ({ text, isChecked, id }) => {
          />
 
          <Text isChecked={isChecked} isDark={isDark} id={id}>
-            {text}
+            {content}
          </Text>
          <CrossIcon
-            onMouseOver={displayCross}
-            onMouseOut={displayCross}
+            onMouseOver={showCross}
+            onMouseOut={hideCross}
             isDisplayed={isDisplayed}
             onClick={removeTask}
          />

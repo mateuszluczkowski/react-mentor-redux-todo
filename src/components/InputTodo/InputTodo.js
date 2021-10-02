@@ -8,10 +8,10 @@ const InputTodo = () => {
    const dispatch = useDispatch();
    const handleSubmit = (e) => {
       e.preventDefault();
-      const text = e.target[0].value;
-      if (text === "") return;
-      e.target[0].value = "";
-      dispatch(add({ text: text }));
+      const input = e.target[0];
+      if (input === "") return;
+      dispatch(add({ content: input.value }));
+      input.value = "";
    };
    return (
       <Form onSubmit={handleSubmit} isDark={isDark}>

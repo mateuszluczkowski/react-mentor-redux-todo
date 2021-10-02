@@ -9,15 +9,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { remove, setFilter } from "reducers/todos.reducer";
 const FilterPanel = () => {
    const dispatch = useDispatch();
-   const todos = useSelector((state) => state.todos.todos);
+   const tasks = useSelector((state) => state.todos.tasks);
    const currentFilter = useSelector((state) => state.todos.filter);
    const clearCompleted = () => {
-      todos.forEach(({ isChecked, id }) => {
+      tasks.forEach(({ isChecked, id }) => {
          if (isChecked) dispatch(remove({ id }));
       });
    };
    const displayLeftText = () => {
-      const todosLeft = todos.filter((todo) => todo.isChecked === false).length;
+      const todosLeft = tasks.filter((todo) => todo.isChecked === false).length;
       if (todosLeft === 0) return "You have nothing to do";
       if (todosLeft === 1) return "One item left";
       return `${todosLeft} items left`;

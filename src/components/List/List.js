@@ -3,7 +3,7 @@ import { Message, Wrapper } from "./List.css";
 import { FilterPanel, Task } from "components";
 
 const List = () => {
-   const todos = useSelector(({ todos }) => todos.todos);
+   const todos = useSelector(({ todos }) => todos.tasks);
    const isDark = useSelector(({ themeToggle }) => themeToggle.isDark);
    const filter = useSelector(({ todos }) => todos.filter);
 
@@ -16,8 +16,8 @@ const List = () => {
               );
       if (filter !== "all" && filteredTodos.length === 0)
          return <Message>You don't have {filter} todos</Message>;
-      return filteredTodos.map(({ id, text, isChecked }) => (
-         <Task key={id} text={text} id={id} isChecked={isChecked} />
+      return filteredTodos.map(({ id, content, isChecked }) => (
+         <Task key={id} content={content} id={id} isChecked={isChecked} />
       ));
    };
 
