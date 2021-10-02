@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/react-mentor-redux-todo/static/js/main.a69344c2.chunk.js",
+    "main.js.map": "/react-mentor-redux-todo/static/js/main.a69344c2.chunk.js.map",
+    "runtime-main.js": "/react-mentor-redux-todo/static/js/runtime-main.577a911d.js",
+    "runtime-main.js.map": "/react-mentor-redux-todo/static/js/runtime-main.577a911d.js.map",
+    "static/js/2.c6bcb55a.chunk.js": "/react-mentor-redux-todo/static/js/2.c6bcb55a.chunk.js",
+    "static/js/2.c6bcb55a.chunk.js.map": "/react-mentor-redux-todo/static/js/2.c6bcb55a.chunk.js.map",
+    "index.html": "/react-mentor-redux-todo/index.html",
+    "static/js/2.c6bcb55a.chunk.js.LICENSE.txt": "/react-mentor-redux-todo/static/js/2.c6bcb55a.chunk.js.LICENSE.txt",
+    "static/media/bg-desktop-dark.73e47dbb.jpg": "/react-mentor-redux-todo/static/media/bg-desktop-dark.73e47dbb.jpg",
+    "static/media/bg-desktop-light.3508d620.jpg": "/react-mentor-redux-todo/static/media/bg-desktop-light.3508d620.jpg",
+    "static/media/icon-check.a8fb15d0.svg": "/react-mentor-redux-todo/static/media/icon-check.a8fb15d0.svg",
+    "static/media/icon-cross.6ee81d30.svg": "/react-mentor-redux-todo/static/media/icon-cross.6ee81d30.svg",
+    "static/media/icon-moon.6c03114b.svg": "/react-mentor-redux-todo/static/media/icon-moon.6c03114b.svg",
+    "static/media/icon-sun.910b1f9a.svg": "/react-mentor-redux-todo/static/media/icon-sun.910b1f9a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.577a911d.js",
+    "static/js/2.c6bcb55a.chunk.js",
+    "static/js/main.a69344c2.chunk.js"
+  ]
+}
