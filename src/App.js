@@ -3,7 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { GlobalStyle, theme } from "theme";
 import { toggle } from "reducers/themeToggle.reducer";
-import { Header, InputTodo, List, TodoWindow, Wrapper } from "components";
+import {
+   Footer,
+   Header,
+   InputTodo,
+   List,
+   TodoWindow,
+   Wrapper,
+} from "components";
 
 const App = () => {
    const dispatch = useDispatch();
@@ -29,6 +36,7 @@ const App = () => {
                <List />
             </TodoWindow>
          </Wrapper>
+         <Footer>Drag and drop to reorder list</Footer>
       </ThemeProvider>
    );
 };

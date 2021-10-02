@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
    
 }
 .root {
+   position:relative;
    max-width: 100vw;
    overflow:hidden;
     background: ${({ theme, isDark }) =>

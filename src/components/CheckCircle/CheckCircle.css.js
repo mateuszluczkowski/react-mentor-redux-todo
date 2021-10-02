@@ -26,6 +26,12 @@ export const Circle = styled.p`
 
    ${({ id }) => (id === undefined ? " cursor:unset;" : null)}
    user-select: none;
+   &:hover {
+      border: ${({ theme, isDark }) =>
+         isDark
+            ? "1px solid rgba(255, 255, 255, 0.35)"
+            : "1px solid rgba(0, 0, 0, 0.35)"};
+   }
    @media (max-width: ${({ theme }) => theme.layout.mobile}px) {
       width: 20px;
       height: 20px;

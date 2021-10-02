@@ -7,3 +7,4 @@ export { default as List } from "./List";
 export { default as Task } from "./Task";
 export { default as FilterPanel } from "./FilterPanel";
 export { default as FilterList } from "./FilterList";
+export { default as Footer } from "./Footer";

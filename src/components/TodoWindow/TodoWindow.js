@@ -6,6 +6,7 @@ const TodoWindow = styled.div`
    flex-wrap: wrap;
    flex-basis: 550px;
    margin-top: 70px;
+   margin-bottom: 100px;
    @media (max-width: ${({ theme }) => theme.layout.mobile}px) {
       margin-top: 20px;
    }
