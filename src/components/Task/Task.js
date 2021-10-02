@@ -11,32 +11,28 @@ const Task = ({ text, isChecked, id }) => {
    const dispatch = useDispatch();
    const isDark = useSelector(({ themeToggle }) => themeToggle.isDark);
 
-   const handleMouseMove = () => setIsDisplayed(true);
-   const handleMouseOut = () => setIsDisplayed(false);
-   const handleMouseDown = (e) => console.log(e.target.id);
+   const displayCross = () => setIsDisplayed(!isDisplayed);
    const removeTask = () => dispatch(remove({ id }));
+
    return (
-      <Wrapper isChecked={isChecked} isDark={isDark}>
+      <Wrapper
+         isChecked={isChecked}
+         isDark={isDark}
+         onMouseOver={displayCross}
+         onMouseOut={displayCross}
+      >
          <CheckCircle
             id={id}
             isChecked={isChecked}
             onClick={() => dispatch(check({ id }))}
          />
 
-         <Text
-            isChecked={isChecked}
-            isDark={isDark}
-            id={id}
-            onClick={() => dispatch(remove({ id }))}
-            onMouseOver={handleMouseMove}
-            onMouseOut={handleMouseOut}
-            onMouseDown={handleMouseDown}
-         >
+         <Text isChecked={isChecked} isDark={isDark} id={id}>
             {text}
          </Text>
          <CrossIcon
-            onMouseOver={handleMouseMove}
-            onMouseOut={handleMouseOut}
+            onMouseOver={displayCross}
+            onMouseOut={displayCross}
             isDisplayed={isDisplayed}
             onClick={removeTask}
          />
