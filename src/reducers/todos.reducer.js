@@ -34,8 +34,12 @@ export const todoSlice = createSlice({
       setFilter: (state, action) => {
          state.filter = action.payload.filter;
       },
+      replace: (state, action) => {
+         state.tasks = action.payload;
+      },
    },
 });
 
-export const { add, check, edit, remove, setFilter } = todoSlice.actions;
+export const { add, check, edit, remove, setFilter, replace } =
+   todoSlice.actions;
 export default todoSlice.reducer;

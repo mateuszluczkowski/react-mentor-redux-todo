@@ -15,8 +15,8 @@ export const Circle = styled.p`
    transition: 0.4s;
    border: ${({ theme, isDark }) =>
       isDark
-         ? "1px solid rgba(255, 255, 255, 0.1)"
-         : "1px solid rgba(0, 0, 0, 0.1)"};
+         ? "1px solid rgba(255, 255, 255, 0.15)"
+         : "1px solid rgba(0, 0, 0, 0.15)"};
 
    ${({ isChecked, theme }) =>
       isChecked

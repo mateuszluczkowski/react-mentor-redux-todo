@@ -9,7 +9,7 @@ const InputTodo = () => {
    const handleSubmit = (e) => {
       e.preventDefault();
       const input = e.target[0];
-      if (input === "") return;
+      if (input.value === "") return;
       dispatch(add({ content: input.value }));
       input.value = "";
    };

@@ -12,6 +12,8 @@ export const Wrapper = styled.div`
    overflow: hidden;
    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
    cursor: pointer;
+   background: ${({ theme, isDark }) =>
+      isDark ? theme.colors.darkTheme.veryDarkDesaturatedBlue : "white"};
 `;
 export const Text = styled.div.attrs(({ id }) => ({
    id,
@@ -32,7 +34,9 @@ export const Text = styled.div.attrs(({ id }) => ({
 export const CrossIcon = styled.img.attrs(() => ({
    src: iconCross,
 }))`
+   padding: 10px;
    transition: 0.4s;
+   cursor: pointer;
    ${({ isDisplayed }) =>
-      isDisplayed ? "opacity:1;" : "opacity:0; pointer-events: none; "}
+      isDisplayed ? "opacity: 1;" : "opacity: 0; pointer-events: none; "}
 `;

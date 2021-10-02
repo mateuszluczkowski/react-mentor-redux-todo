@@ -5,26 +5,14 @@ export const Wrapper = styled.div`
    grid-template-rows: 1fr;
    padding: 15px 25px;
    align-items: center;
-`;
-
-export const DisplayList = styled.ul`
-   list-style: none;
-   text-align: center;
-`;
-export const ListItem = styled.li`
-   display: inline;
-   margin: 10px;
-   font-size: 14px;
-   font-weight: 700;
-   cursor: pointer;
-   opacity: 0.55;
-   transition: 0.4s;
-   &:hover {
-      opacity: 1;
-   }
-   
-     ${({ active, theme: { colors } }) =>
-        active ? `color: ${colors.primary.brightBlue}; opacity: 1;` : null}
+   border-radius: 0 0 5px 5px;
+   box-shadow: 0 0px 80px rgba(0, 0, 0, 0.08);
+   background: ${({ theme, isDark }) =>
+      isDark ? theme.colors.darkTheme.veryDarkDesaturatedBlue : "white"};
+   @media (max-width: ${({ theme }) => theme.layout.mobile}px) {
+      flex-basis: 100%;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "counter cleanButton";
    }
 `;
 
@@ -39,8 +27,14 @@ export const CleanButton = styled.button`
    &:hover {
       opacity: 1;
    }
+   @media (max-width: ${({ theme }) => theme.layout.mobile}px) {
+      grid-area: cleanButton;
+   }
 `;
 export const Counter = styled.p`
    opacity: 0.55;
    font-size: 14px;
+   @media (max-width: ${({ theme }) => theme.layout.mobile}px) {
+      grid-area: counter;
+   }
 `;
