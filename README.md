@@ -1,7 +1,10 @@
+## GitHub Pages: https://mateuszluczkowski.github.io/react-mentor-redux-todo/
+##Todo list
 Todo List with status filter and with the possibility of drag and drop task. Two themes dark and light, to switch them just click on the sun/moon icon. 
 
 
-desktop-preview.jpg
+
+![desktop-preview](https://user-images.githubusercontent.com/81802967/135723874-39751330-830a-4e75-87c5-75bd71456757.jpg)
 
 
 
