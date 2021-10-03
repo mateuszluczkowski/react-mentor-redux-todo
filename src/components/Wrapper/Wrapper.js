@@ -3,11 +3,11 @@ import { WrapperStyled } from "./Wrapper.css";
 import { useSelector } from "react-redux";
 
 const Wrapper = ({ children }) => {
-   const isDark = useSelector((state) => state.themeToggle.isDark);
+   const isDarkTheme = useSelector((state) => state.themeToggle.isDarkTheme);
    const isMobile = useSelector((state) => state.themeToggle.isMobile);
 
    return (
-      <WrapperStyled isDark={isDark} isMobile={isMobile}>
+      <WrapperStyled isDarkTheme={isDarkTheme} isMobile={isMobile}>
          {children}
       </WrapperStyled>
    );

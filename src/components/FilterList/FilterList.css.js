@@ -8,8 +8,10 @@ export const Wrapper = styled.ul`
       border-radius: 5px;
       margin: 15px 0;
       box-shadow: 80px 0px 80px rgb(0 0 0 / 8%);
-      background: ${({ theme, isDark }) =>
-         isDark ? theme.colors.darkTheme.veryDarkDesaturatedBlue : "white"};
+      background: ${({ theme, isDarkTheme }) =>
+         isDarkTheme
+            ? theme.colors.darkTheme.veryDarkDesaturatedBlue
+            : "white"};
    }
 `;
 export const ListItem = styled.li`

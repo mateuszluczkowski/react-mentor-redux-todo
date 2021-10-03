@@ -13,8 +13,8 @@ export const Circle = styled.p`
    border-radius: 50%;
    cursor: pointer;
    transition: 0.4s;
-   border: ${({ theme, isDark }) =>
-      isDark
+   border: ${({ theme, isDarkTheme }) =>
+      isDarkTheme
          ? "1px solid rgba(255, 255, 255, 0.15)"
          : "1px solid rgba(0, 0, 0, 0.15)"};
 
@@ -27,8 +27,8 @@ export const Circle = styled.p`
    ${({ id }) => (id === undefined ? " cursor:unset;" : null)}
    user-select: none;
    &:hover {
-      border: ${({ theme, isDark }) =>
-         isDark
+      border: ${({ theme, isDarkTheme }) =>
+         isDarkTheme
             ? "1px solid rgba(255, 255, 255, 0.35)"
             : "1px solid rgba(0, 0, 0, 0.35)"};
    }

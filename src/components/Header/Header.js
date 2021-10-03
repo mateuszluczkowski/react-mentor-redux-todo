@@ -5,14 +5,14 @@ import { ThemeButton, ThemeIcon, Title, Wrapper } from "./Header.css";
 
 const Header = () => {
    const dispatch = useDispatch();
-   const isDark = useSelector((state) => state.themeToggle.isDark);
-   const handleClick = () => dispatch(toggle("isDark"));
+   const isDarkTheme = useSelector((state) => state.themeToggle.isDarkTheme);
+   const switchTheme = () => dispatch(toggle("isDarkTheme"));
 
    return (
       <Wrapper>
          <Title>todo</Title>
-         <ThemeButton onClick={handleClick}>
-            <ThemeIcon isDark={isDark} />
+         <ThemeButton onClick={() => switchTheme()}>
+            <ThemeIcon isDarkTheme={isDarkTheme} />
          </ThemeButton>
       </Wrapper>
    );

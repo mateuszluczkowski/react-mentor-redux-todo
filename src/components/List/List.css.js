@@ -6,8 +6,8 @@ export const Wrapper = styled.div`
    margin-top: 25px;
    border-radius: 5px 5px 0 0;
    flex-basis: 100%;
-   background: ${({ theme, isDark }) =>
-      isDark ? theme.colors.darkTheme.veryDarkDesaturatedBlue : "white"};
+   background: ${({ theme, isDarkTheme }) =>
+      isDarkTheme ? theme.colors.darkTheme.veryDarkDesaturatedBlue : "white"};
 `;
 
 export const Message = styled.div`

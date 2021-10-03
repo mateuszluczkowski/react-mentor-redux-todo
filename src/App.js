@@ -15,7 +15,7 @@ import {
 const App = () => {
    const dispatch = useDispatch();
    const isMobile = useSelector((state) => state.themeToggle.isMobile);
-   const isDark = useSelector((state) => state.themeToggle.isDark);
+   const isDarkTheme = useSelector((state) => state.themeToggle.isDarkTheme);
    window.onload = () => {
       if (window.innerWidth > theme.layout.mobile) dispatch(toggle("isMobile"));
    };
@@ -27,7 +27,7 @@ const App = () => {
    };
    return (
       <ThemeProvider theme={theme}>
-         <GlobalStyle isMobile={isMobile} isDark={isDark} />
+         <GlobalStyle isMobile={isMobile} isDarkTheme={isDarkTheme} />
          <Wrapper>
             <TodoWindow>
                {" "}

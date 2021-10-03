@@ -11,8 +11,8 @@ const GlobalStyle = createGlobalStyle`
        isMobile
           ? theme.typography.fontSize.mobile
           : theme.typography.fontSize.desktop};
-    color: ${({ theme, isDark }) =>
-       isDark
+    color: ${({ theme, isDarkTheme }) =>
+       isDarkTheme
           ? theme.typography.color.darkTheme
           : theme.typography.color.lightTheme}
    
@@ -21,8 +21,8 @@ const GlobalStyle = createGlobalStyle`
    position:relative;
    max-width: 100vw;
    overflow:hidden;
-    background: ${({ theme, isDark }) =>
-       isDark
+    background: ${({ theme, isDarkTheme }) =>
+       isDarkTheme
           ? theme.colors.darkTheme.veryDarkBlue
           : theme.colors.lightTheme.veryLightGray};
 }

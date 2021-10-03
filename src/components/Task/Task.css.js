@@ -12,8 +12,8 @@ export const Wrapper = styled.div`
    overflow: hidden;
    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
    cursor: pointer;
-   background: ${({ theme, isDark }) =>
-      isDark ? theme.colors.darkTheme.veryDarkDesaturatedBlue : "white"};
+   background: ${({ theme, isDarkTheme }) =>
+      isDarkTheme ? theme.colors.darkTheme.veryDarkDesaturatedBlue : "white"};
 `;
 export const Text = styled.div.attrs(({ id }) => ({
    id,
@@ -23,9 +23,9 @@ export const Text = styled.div.attrs(({ id }) => ({
    flex-grow: 1;
    height: 100%;
    padding: 18px 0;
-   ${({ isChecked, isDark }) => {
+   ${({ isChecked, isDarkTheme }) => {
       if (isChecked) {
-         if (isDark) return "text-decoration: line-through; opacity:0.2";
+         if (isDarkTheme) return "text-decoration: line-through; opacity:0.2";
          else return "text-decoration: line-through;opacity:0.2";
       }
    }};

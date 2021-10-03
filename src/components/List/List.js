@@ -9,7 +9,9 @@ import { replace } from "reducers/todos.reducer";
 const List = () => {
    const dispatch = useDispatch();
    const todos = useSelector(({ todos }) => todos.tasks);
-   const isDark = useSelector(({ themeToggle }) => themeToggle.isDark);
+   const isDarkTheme = useSelector(
+      ({ themeToggle }) => themeToggle.isDarkTheme
+   );
    const filter = useSelector(({ todos }) => todos.filter);
 
    const filteredContent = () => {
@@ -39,17 +41,17 @@ const List = () => {
          destination.index === source.index
       )
          return;
-      const newTodos = Array.from(todos);
-      newTodos.splice(source.index, 1);
-      newTodos.splice(destination.index, 0, todos[source.index]);
-      dispatch(replace(newTodos));
+      const newState = Array.from(todos);
+      newState.splice(source.index, 1);
+      newState.splice(destination.index, 0, todos[source.index]);
+      dispatch(replace(newState));
    };
    return (
       <DragDropContext onDragEnd={onDragEnd}>
          <Droppable droppableId={"1"}>
             {(provided) => (
                <Wrapper
-                  isDark={isDark}
+                  isDarkTheme={isDarkTheme}
                   ref={provided.innerRef}
                   {...provided.droppableProps}
                >

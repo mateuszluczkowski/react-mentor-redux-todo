@@ -7,8 +7,8 @@ export const Form = styled.form`
    align-items: center;
    width: 100%;
    border-radius: 5px;
-   background: ${({ theme, isDark }) =>
-      isDark ? theme.colors.darkTheme.veryDarkDesaturatedBlue : "white"};
+   background: ${({ theme, isDarkTheme }) =>
+      isDarkTheme ? theme.colors.darkTheme.veryDarkDesaturatedBlue : "white"};
 `;
 export const Input = styled.input.attrs(() => ({
    placeholder: "Create a new todo...",

@@ -2,12 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 export const themeToggleSlice = createSlice({
    name: "theme",
    initialState: {
-      isDark: false,
+      isDarkTheme: false,
       isMobile: true,
    },
    reducers: {
       toggle: (state, action) => {
-         if (action.payload === "isDark") state.isDark = !state.isDark;
+         if (action.payload === "isDarkTheme")
+            state.isDarkTheme = !state.isDarkTheme;
          if (action.payload === "isMobile") state.isMobile = !state.isMobile;
       },
    },

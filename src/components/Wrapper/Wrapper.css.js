@@ -9,8 +9,8 @@ export const WrapperStyled = styled.div`
    min-height: 100vh;
    margin: 0 auto;
    max-width: ${({ theme }) => theme.layout.desktop}px;
-   background: url("${({ isMobile, isDark, theme }) =>
-      theme.background[isDark ? "dark" : "light"][
+   background: url("${({ isMobile, isDarkTheme, theme }) =>
+      theme.background[isDarkTheme ? "dark" : "light"][
          isMobile ? "mobile" : "desktop"
       ]}");
    background-repeat: no-repeat;

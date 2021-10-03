@@ -4,17 +4,17 @@ import { CheckCircle } from "components";
 import { add } from "reducers/todos.reducer";
 
 const InputTodo = () => {
-   const isDark = useSelector((state) => state.themeToggle.isDark);
+   const isDarkTheme = useSelector((state) => state.themeToggle.isDarkTheme);
    const dispatch = useDispatch();
    const handleSubmit = (e) => {
       e.preventDefault();
       const input = e.target[0];
       if (input.value === "") return;
       dispatch(add({ content: input.value }));
-      input.value = "";
+      return (input.value = "");
    };
    return (
-      <Form onSubmit={handleSubmit} isDark={isDark}>
+      <Form onSubmit={(e) => handleSubmit(e)} isDarkTheme={isDarkTheme}>
          <CheckCircle />
          <Input />
       </Form>

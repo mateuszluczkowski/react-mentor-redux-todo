@@ -24,6 +24,6 @@ export const Title = styled.h1`
       letter-spacing: 10px;
    }
 `;
-export const ThemeIcon = styled.img.attrs(({ isDark }) => ({
-   src: isDark ? iconSun : iconMoon,
+export const ThemeIcon = styled.img.attrs(({ isDarkTheme }) => ({
+   src: isDarkTheme ? iconSun : iconMoon,
 }))``;

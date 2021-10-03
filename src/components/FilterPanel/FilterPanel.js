@@ -4,27 +4,29 @@ import { FilterList } from "components";
 import { remove } from "reducers/todos.reducer";
 const FilterPanel = () => {
    const dispatch = useDispatch();
-   const isDark = useSelector((state) => state.themeToggle.isDark);
+   const isDarkTheme = useSelector((state) => state.themeToggle.isDarkTheme);
    const tasks = useSelector((state) => state.todos.tasks);
    const isMobile = useSelector((state) => state.themeToggle.isMobile);
-   const clearCompleted = () => {
-      tasks.forEach(({ isChecked, id }) => {
-         if (isChecked) dispatch(remove({ id }));
-      });
+
+   const clearCompletedTask = () => {
+      tasks.forEach(({ isChecked, id }) =>
+         isChecked ? dispatch(remove({ value: id })) : null
+      );
    };
-   const displayLeftText = () => {
+   const displayLeftText = (tasks) => {
       const todosLeft = tasks.filter((todo) => todo.isChecked === false).length;
       if (todosLeft === 0) return "You have nothing to do";
       if (todosLeft === 1) return "One item left";
       return `${todosLeft} items left`;
    };
-
    return (
       <>
-         <Wrapper isDark={isDark}>
-            <Counter isDark={isDark}>{displayLeftText()}</Counter>
+         <Wrapper isDarkTheme={isDarkTheme}>
+            <Counter isDarkTheme={isDarkTheme}>
+               {displayLeftText(tasks)}
+            </Counter>
             {isMobile ? null : <FilterList />}
-            <CleanButton onClick={clearCompleted} isDark={isDark}>
+            <CleanButton onClick={clearCompletedTask} isDarkTheme={isDarkTheme}>
                Clear Completed
             </CleanButton>
          </Wrapper>

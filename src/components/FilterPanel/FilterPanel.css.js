@@ -7,8 +7,8 @@ export const Wrapper = styled.div`
    align-items: center;
    border-radius: 0 0 5px 5px;
    box-shadow: 0 0px 80px rgba(0, 0, 0, 0.08);
-   background: ${({ theme, isDark }) =>
-      isDark ? theme.colors.darkTheme.veryDarkDesaturatedBlue : "white"};
+   background: ${({ theme, isDarkTheme }) =>
+      isDarkTheme ? theme.colors.darkTheme.veryDarkDesaturatedBlue : "white"};
    @media (max-width: ${({ theme }) => theme.layout.mobile}px) {
       flex-basis: 100%;
       grid-template-columns: 1fr 1fr;
